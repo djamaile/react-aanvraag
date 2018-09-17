@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header moet goed tevoorschijn komen 1`] = `
+<header>
+  <h1>
+    React Applicatie
+  </h1>
+  <NavLink
+    activeClassName="isActive"
+    aria-current="page"
+    exact={true}
+    to="/"
+  >
+    Dashboard
+  </NavLink>
+  <NavLink
+    activeClassName="isActive"
+    aria-current="page"
+    to="/aanvraag"
+  >
+    Aanvraag
+  </NavLink>
+</header>
+`;
