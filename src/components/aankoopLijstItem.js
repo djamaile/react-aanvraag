@@ -10,12 +10,6 @@ const AankoopLijstItem = ({dispatch,description, totaal, aangemaakt, id, update}
         </Link>
         <p>Prijs: {totaal}</p>
         <p>Aangemaakt: {aangemaakt}</p>
-        <button
-            onClick={() => {
-                dispatch(editAankoop({id, update}))
-            }}
-        >Edit
-        </button>
     </div>
 );
 
