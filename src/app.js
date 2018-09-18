@@ -14,7 +14,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import moment, { now } from 'moment';
 
 const store = configureStore();
-
+console.log("testing");
 store.dispatch(addAankoop({description: "Water rekening", totaal: 200, aangemaakt:1537194096134}));
 store.dispatch(addAankoop({description: "Huur  rekening", totaal: 800, aangemaakt:1537194096134}));
 store.dispatch(addAankoop({description: "Gass  rekening", totaal: 400, aangemaakt: 1537194096134}));
