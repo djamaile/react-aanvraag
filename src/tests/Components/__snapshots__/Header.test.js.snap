@@ -3,7 +3,7 @@
 exports[`Header moet goed tevoorschijn komen 1`] = `
 <header>
   <h1>
-    Aanvraag Applicatie
+    React Applicatie
   </h1>
   <NavLink
     activeClassName="isActive"
