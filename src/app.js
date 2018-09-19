@@ -15,9 +15,9 @@ import moment, { now } from 'moment';
 
 const store = configureStore();
 console.log("testing");
-store.dispatch(addAankoop({description: "Water rekening", totaal: 200, aangemaakt:1537194096134}));
-store.dispatch(addAankoop({description: "Huur  rekening", totaal: 800, aangemaakt:1537194096134}));
-store.dispatch(addAankoop({description: "Gass  rekening", totaal: 400, aangemaakt: 1537194096134}));
+store.dispatch(addAankoop({description: "Macbook pro", totaal: 1500, note: "Voor mijn verjaardag", aangemaakt:1537194096134}));
+store.dispatch(addAankoop({description: "Iphone XS Max", totaal: 1660,  note: "Graag een nieuwe werktelefoon",aangemaakt:1537093095134}));
+store.dispatch(addAankoop({description: "HP Laptop", totaal: 750,  note: "Werk laptop is kapot",aangemaakt:1537003095134}));
 
 const state = store.getState();
 const alleAankopen = getAankopen(state.aankopen, state.filters);

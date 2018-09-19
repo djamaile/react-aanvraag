@@ -3,6 +3,8 @@ html {
 }
 
 body {
+  overflow-x: hidden;
+  background-color: #eee;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
 }
@@ -19,5 +21,9 @@ button:disabled {
   margin-right: 12px;
   color: blue;
   font-weight: bold;
+}
+
+.Select-menu{
+  width:100px;
 }
 

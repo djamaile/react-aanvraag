@@ -7,7 +7,7 @@ export const AankopenLijst = (props) => (
     <div>
       {
         props.aankopen.length === 0 ? (
-          <p>No expenses</p>
+          <p>Geen aanvraag</p>
         ) : (
             props.aankopen.map((aankoop) => {
               return <AankoopLijstItem key={aankoop.id} {...aankoop} />;

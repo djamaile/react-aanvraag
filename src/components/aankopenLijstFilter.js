@@ -2,6 +2,37 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {DateRangePicker} from 'react-dates';
 import {setTextFilter, sortByBedrag, sortByDate, setStartDate, setEndDate} from '../actions/filters';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { withStyles } from '../../node_modules/@material-ui/core';
+
+const styles = theme => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    formControl: {
+      margin: theme.spacing.unit,
+      minWidth: 120,
+    },
+    selectEmpty: {
+      marginTop: theme.spacing.unit * 2,
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+    },
+    dense: {
+        marginTop: 19,
+    },
+    menu: {
+        width: 200,
+    },
+  });
 
 class AankopenLijstFilter extends React.Component{
     state = {
@@ -14,27 +45,45 @@ class AankopenLijstFilter extends React.Component{
     onFocusChange = (kalenderFocused) => {
         this.setState(() => ({kalenderFocused}));
     };
+
     render(){
+        const { classes } = this.props;
         return (
             <div>
-                <input type="text" value={this.props.filters.text} onChange={(e) => {
-                    props.dispatch(setTextFilter(e.target.value));
-                    console.log(e.target.value);
-                }}/>
-                <select
-                    value={this.props.filters.sortBy}
+                <TextField
+                    id="standard-name"
+                    label="Zoek aanvraag"
+                    className={classes.textField}
+                    value={this.props.filters.text}
                     onChange={(e) => {
-                    if (e.target.value === 'date') {
-                        this.props.dispatch(sortByDate());
-                    } else if (e.target.value === 'bedrag') {
-                        this.props.dispatch(sortByBedrag());
-                    }
+                    this.props.dispatch(setTextFilter(e.target.value));
+                    console.log(e.target.value);
                     }}
-                >
-                    <option value="date">Datum</option>
-                    <option value="bedrag">Bedrag</option>
-                </select>
-                <DateRangePicker
+                    margin="normal"
+                />
+                <FormControl className={classes.formControl} >
+                   
+                    <Select
+                        value={this.props.filters.sortBye}
+                        onChange={(e) => {
+                            if (e.target.value === 'date') {
+                                this.props.dispatch(sortByDate());
+                            } else if (e.target.value === 'bedrag') {
+                                this.props.dispatch(sortByBedrag());
+                            }
+                        }}
+                        name="age"
+                        className={classes.selectEmpty}
+                         >
+                        <MenuItem value="date"r>
+                        Kies een filter
+                        </MenuItem>
+                        <MenuItem value="date">date</MenuItem>
+                        <MenuItem value="bedrag">bedrag</MenuItem>
+                    </Select>
+                    <FormHelperText>Kies een filter</FormHelperText>
+                </FormControl>
+                {/*<DateRangePicker
                     startDate={this.props.filters.startDate}
                     endDate={this.props.filters.endDate}
                     onDatesChange={this.onDatesChange}
@@ -46,7 +95,7 @@ class AankopenLijstFilter extends React.Component{
                     //deze twee props horen erbij anders krijg error warnings 
                     startDateId="startDateId"
                     endDateId="endDateId"
-                />
+                />*/}
             </div>
         );
     }
@@ -58,4 +107,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(AankopenLijstFilter);
+const styledClass = withStyles(styles)(AankopenLijstFilter);
+
+export default connect(mapStateToProps)(styledClass);

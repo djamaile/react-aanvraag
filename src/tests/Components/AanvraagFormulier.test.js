@@ -2,7 +2,6 @@ import React from 'react';
 import {shallow} from 'enzyme'; 
 import AanvraagFormulier from '../../components/AanvraagFormulier';
 import aanvragen from '../fixtures/dummydata';
-import moment from 'moment';
 
 test('Een correcte formulier moet gerendert worden', () => {
     const wrapper = shallow(<AanvraagFormulier/>);
