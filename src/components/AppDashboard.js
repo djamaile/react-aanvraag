@@ -31,15 +31,16 @@ const Dashboard = (props) => {
         <div>  
             <div className={classes.root}>
                 <Grid container spacing={24}>
-                    <Grid item xs={4}>
+                    <Grid item sm={12} xs={12} md={4} lg={4}>
                         
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item sm={12} xs={12} md={4} lg={4}>
                         <AankopenLijstFilter/>
                         <AanvraagOverzicht/>
                         <AankopenLijst/>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item sm={12} xs={12} md={4} lg={4}>
+                   
                     </Grid>
                 </Grid>
             </div>
